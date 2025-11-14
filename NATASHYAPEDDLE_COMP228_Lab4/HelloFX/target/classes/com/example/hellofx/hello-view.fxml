@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.hellofx.HelloController"
+            stylesheets="@bootstrapfx.css">
+
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" styleClass="p-4">
+            <Label text="Welcome to HelloFX" styleClass="h2 text-primary"/>
+            <Label fx:id="welcomeText" text="Click below to get a greeting" styleClass="text-secondary"/>
+            <Button text="Hello!" onAction="#onHelloButtonClick"/>
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Tooltip?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<GridPane xmlns:fx= "http://java.com/fxml" fx:controller="com.example2.hellofx2.HelloController" prefWidth="600" prefHeight="400" minHeight="400" minWidth="300" maxHeight="-Infinity" maxWidth="-Infinity" hgap ="10" vgap = "10" style ="-fx-padding:28;">
+<columnConstraints>
+    <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+    <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+
+</columnConstraints>
+
+
+    <!--Full name-->
+    <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass=" "/>
+    <TextField fx:id="fullNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="e.g., John Smith" styleClass="textfield"/>
+    <!--StreetAddress-->
+    <Label text="Street Address:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass=" "/>
+    <TextField fx:id="streetAddressField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="e.g., 123 Happy Dr" styleClass="textfield"/>
+    <!--Province-->
+    <Label text="Province:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass=" "/>
+    <TextField fx:id="provinceField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="e.g., ON" styleClass="textfield"/>
+    <!--City-->
+    <Label text="City:" GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass=" "/>
+    <TextField fx:id="cityField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="e.g., Toronto" styleClass="textfield"/>
+    <!--Postal Code-->
+    <Label text="Postal Code:" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass=" "/>
+    <TextField fx:id="postalField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="e.g., L1K2G3" styleClass="textfield"/>
+    <!--Phone#-->
+    <Label text="Phone Number:" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass=" "/>
+    <TextField fx:id="phoneNumField" GridPane.rowIndex="5" GridPane.columnIndex="1" promptText="e.g., 123-456-7890" styleClass="textfield"/>
+    <!--Email-->
+    <Label text="Email:" GridPane.rowIndex="6" GridPane.columnIndex="0" styleClass=" "/>
+    <TextField fx:id="emailField" GridPane.rowIndex="6" GridPane.columnIndex="1" promptText="e.g., Email@gmail.com" styleClass="textfield"/>
+
+
+    <!--additional info checkboxes-->
+    <HBox spacing="10" GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="3">
+        <Label text="Additional Information:"  styleClass=" "/>
+        <CheckBox fx:id="studentCouncilCheckmark" text="Student Council"/>
+        <CheckBox fx:id="VolunteerCheckmark" text="Volunteer Work" />
+    </HBox>
+
+    <!--Pick Major-->
+    <HBox spacing="10" GridPane.rowIndex="8" GridPane.columnIndex="0">
+        <Label text="Major:"/>
+        <!--Computer Science-->
+        <RadioButton text="ComputerScience" fx:id="csRadio"/>
+        <!--Business-->
+        <RadioButton text="Business" fx:id="bRadio"/>
+    </HBox>
+
+    <HBox spacing="10" GridPane.rowIndex="9" GridPane.columnIndex="0" GridPane.columnSpan="2">
+    <Label text="Courses:"/>
+        <ComboBox fx:id="courseComboBox" prefWidth="-Infinity"/>
+        <Button text="Add Course" fx:id="addCourseButton" onAction="#addCourses"/>
+
+        <!--List view-->
+        <Label text = "Course List:"/>
+        <ListView fx:id="courseListView" prefWidth="400" prefHeight="100"/>
+
+    </HBox>
+
+
+    <!--display button-->
+    <Button text="Display Info" fx:id="displayButton" GridPane.rowIndex="11" GridPane.columnIndex="1" styleClass="btn, btn-primary" onAction="#displayInfo">
+        <tooltip> <!--They can see what its used for when they hover it-->
+            <Tooltip styleClass="tooltip-info" text="Display the info above"/>
+        </tooltip>
+    </Button>
+
+    <TextArea text="Information" fx:id="displayInfo" GridPane.rowIndex="12" GridPane.columnIndex="1" GridPane.columnSpan="2" prefHeight="200" wrapText="true"/>
+
+
+</GridPane>
+
+<!--<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example2.hellofx2.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+  </padding>
+
+  <Label fx:id="welcomeText"/>
+  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+</VBox>-->
